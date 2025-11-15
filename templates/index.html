@@ -1,1 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Phishing Detector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/static/style.css" rel="stylesheet">
 
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1> Phishing Detector</h1>
+
+    <form class="card" id="urlForm">
+      <label for="urlInput" class="label">Enter URL to scan</label>
+      <input id="urlInput" type="text" placeholder="https://example.com/login">
+      <button id="scanBtn" type="submit">Scan URL</button>
+      <div id="message" class="message"></div>
+    </form>
+
+    <div id="result" class="result-card hidden">
+      <h2>Scan result</h2>
+      <p><strong>URL:</strong> <span id="resUrl"></span></p>
+      <p><strong>Verdict:</strong> <span id="resVerdict"></span></p>
+      <p><strong>Confidence:</strong> <span id="resConfidence"></span></p>
+    </div>
+
+    <footer>
+      <p>Free-tier demo. Heuristic-only detection (no paid APIs).</p>
+    </footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
