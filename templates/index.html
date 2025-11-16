@@ -2,39 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mirage</title>
+  <title>Mirage - Phishing Detector</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';">
   <link href="/static/style.css" rel="stylesheet">
-
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
+  <div class="container">
+    <h1 class="title">Phishing Detector</h1>
+    <p class="instruction">Enter a URL below to check if it's a phishing link.</p>
 
-  <main class="container">
-    <h1> Mirage</h1>
+    <input id="urlInput" type="text" placeholder="Enter URL here" class="input-box">
+    <button id="scanBtn" class="btn">Check</button>
 
-    <form class="card" id="urlForm">
-      <label for="urlInput" class="label">Enter URL to scan</label>
-      <input id="urlInput" type="text" placeholder="https://example.com/login">
-      <button id="scanBtn" type="submit">Scan URL</button>
-      <div id="message" class="message"></div>
-    </form>
-
-    <div id="result" class="result-card hidden">
-      <h2>Scan result</h2>
-      <p><strong>URL:</strong> <span id="resUrl"></span></p>
-      <p><strong>Verdict:</strong> <span id="resVerdict"></span></p>
-      <p><strong>Confidence:</strong> <span id="resConfidence"></span></p>
+    <div id="result" class="result-box">
+      The result will be displayed here.
     </div>
-
-    <footer>
-      <p>Free-tier demo. Heuristic-only detection (no paid APIs).</p>
-    </footer>
-  </main>
+  </div>
 
   <script src="/static/script.js"></script>
 </body>
